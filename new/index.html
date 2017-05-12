@@ -23,8 +23,8 @@
 				Made for creative visionaries and radical thinkers.</p>
 			</header>
 
-			<div style="position: fixed; z-index: -99; width: 100%; height: 100%">
-				<iframe frameborder="0" height="100%" width="100%" src="https://www.youtube.com/embed/2HK-8M-VHnc?autoplay=1&controls=0&showinfo=0&autohide=1" frameborder="0" allowfullscreen></iframe>
+		<!-- Video -->
+			<div id="myVideo" style="position: fixed; z-index: -99; width: 100%; height: 100%">
 			</div>
 
 		<!-- Signup Form -->
@@ -48,6 +48,35 @@
 
 		<!-- Scripts -->
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script async src="https://www.youtube.com/iframe_api"></script>
+			<script>
+			 function onYouTubeIframeAPIReady() {
+			  var player;
+			  player = new YT.Player('myVideo', {
+			    videoId: '2HK-8M-VHnc', // YouTube Video ID
+			    width: 560,               // Player width (in px)
+			    height: 316,              // Player height (in px)
+			    playerVars: {
+			      autoplay: 1,        // Auto-play the video on load
+			      controls: 0,        // Show pause/play buttons in player
+			      showinfo: 0,        // Hide the video title
+			      modestbranding: 1,  // Hide the Youtube Logo
+			      loop: 1,            // Run the video in a loop
+			      fs: 0,              // Hide the full screen button
+			      cc_load_policy: 0, // Hide closed captions
+			      iv_load_policy: 3,  // Hide the Video Annotations
+			      autohide: 1         // Hide video controls when playing
+			    },
+			    events: {
+			      onReady: function(e) {
+			        e.target.mute();
+			      }
+			    }
+			  });
+			 }
+
+			 // Written by @labnol 
+			</script>
 			<script src="assets/js/main.js"></script>
 
 	</body>
