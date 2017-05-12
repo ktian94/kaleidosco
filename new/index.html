@@ -18,14 +18,15 @@
 
 		<!-- Header -->
 			<header id="header">
+				<video style="width: 10em;" loop autoplay muted poster="images/circle.jpg">
+				  <source src="images/circle.webm" type="video/webm">
+				  <source src="images/circle.mp4" type="video/mp4">
+				  Your browser does not support HTML5 video.
+				</video>
 				<h1>Kaleidoscope</h1>
 				<p>Glasses that share video to any platform.<br />
 				Made for creative visionaries and radical thinkers.</p>
 			</header>
-
-		<!-- Video -->
-			<div id="myVideo" style="position: fixed; z-index: -99; width: 100%; height: 100%">
-			</div>
 
 		<!-- Signup Form -->
 			<form id="signup-form" method="post" action="#">
@@ -48,42 +49,6 @@
 
 		<!-- Scripts -->
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script async src="https://www.youtube.com/iframe_api"></script>
-			<script>
-			function isMobile() {
-				return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-			}
-
-			 function onYouTubeIframeAPIReady() {
-			 	if (!isMobile()) {
-				  var player;
-				  player = new YT.Player('myVideo', {
-				    videoId: '2HK-8M-VHnc', // YouTube Video ID
-				    width: 560,               // Player width (in px)
-				    height: 316,              // Player height (in px)
-				    playerVars: {
-				      autoplay: 1,        // Auto-play the video on load
-				      controls: 0,        // Show pause/play buttons in player
-				      showinfo: 0,        // Hide the video title
-				      modestbranding: 1,  // Hide the Youtube Logo
-				      loop: 0,            // Run the video in a loop
-				      fs: 0,              // Hide the full screen button
-				      cc_load_policy: 0, // Hide closed captions
-				      iv_load_policy: 3,  // Hide the Video Annotations
-				      autohide: 1,         // Hide video controls when playing
-				      playlist: '2HK-8M-VHnc'
-				    },
-				    events: {
-				      onReady: function(e) {
-				        e.target.mute();
-				      }
-				    }
-				  });
-				}
-			}
-
-			 // Written by @labnol 
-			</script>
 			<script src="assets/js/main.js"></script>
 
 	</body>
