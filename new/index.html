@@ -50,30 +50,37 @@
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script async src="https://www.youtube.com/iframe_api"></script>
 			<script>
+			function isMobile() {
+				return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+			}
+
 			 function onYouTubeIframeAPIReady() {
-			  var player;
-			  player = new YT.Player('myVideo', {
-			    videoId: '2HK-8M-VHnc', // YouTube Video ID
-			    width: 560,               // Player width (in px)
-			    height: 316,              // Player height (in px)
-			    playerVars: {
-			      autoplay: 1,        // Auto-play the video on load
-			      controls: 0,        // Show pause/play buttons in player
-			      showinfo: 0,        // Hide the video title
-			      modestbranding: 1,  // Hide the Youtube Logo
-			      loop: 1,            // Run the video in a loop
-			      fs: 0,              // Hide the full screen button
-			      cc_load_policy: 0, // Hide closed captions
-			      iv_load_policy: 3,  // Hide the Video Annotations
-			      autohide: 1         // Hide video controls when playing
-			    },
-			    events: {
-			      onReady: function(e) {
-			        e.target.mute();
-			      }
-			    }
-			  });
-			 }
+			 	if (!isMobile()) {
+				  var player;
+				  player = new YT.Player('myVideo', {
+				    videoId: '2HK-8M-VHnc', // YouTube Video ID
+				    width: 560,               // Player width (in px)
+				    height: 316,              // Player height (in px)
+				    playerVars: {
+				      autoplay: 1,        // Auto-play the video on load
+				      controls: 0,        // Show pause/play buttons in player
+				      showinfo: 0,        // Hide the video title
+				      modestbranding: 1,  // Hide the Youtube Logo
+				      loop: 0,            // Run the video in a loop
+				      fs: 0,              // Hide the full screen button
+				      cc_load_policy: 0, // Hide closed captions
+				      iv_load_policy: 3,  // Hide the Video Annotations
+				      autohide: 1,         // Hide video controls when playing
+				      playlist: '2HK-8M-VHnc'
+				    },
+				    events: {
+				      onReady: function(e) {
+				        e.target.mute();
+				      }
+				    }
+				  });
+				}
+			}
 
 			 // Written by @labnol 
 			</script>
