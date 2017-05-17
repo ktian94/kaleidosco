@@ -495,10 +495,18 @@
 		line-height: 1.5em;
 	}
 
+	video {
+		width: 20em;
+	}
+
 	@media screen and (max-width: 980px) {
 
 		header br {
 			display: none;
+		}
+
+		video {
+			width: 18em;
 		}
 
 	}
@@ -509,12 +517,20 @@
 			display: inline;
 		}
 
+		video {
+			width: 16em;
+		}
+
 	}
 
 	@media screen and (max-width: 480px) {
 
 		header br {
 			display: none;
+		}
+
+		video {
+			width: 14em;
 		}
 
 	}
