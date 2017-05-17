@@ -3267,9 +3267,18 @@
 		z-index: 100;
 	}
 
-		#header h1 {
+		#header img {
 			height: inherit;
 			left: 1.25em;
+			line-height: inherit;
+			margin: 0;
+			position: absolute;
+			top: 0;
+		}
+
+		#header h1 {
+			height: inherit;
+			left: 4.25em;
 			line-height: inherit;
 			margin: 0;
 			position: absolute;
