@@ -45,7 +45,7 @@
 
 		// Scrolly links.
 			$('.scrolly').scrolly({
-				speed: 1000
+				speed: 900
 			});
 
 		// Dropdowns.
